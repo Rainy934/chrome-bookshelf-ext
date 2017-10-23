@@ -4,16 +4,6 @@ var title = texts[texts.length-1]
 var message = {
     title: title,
     link: url,
-    position: 0
+    time: (new Date()).toLocaleString()
 }
 chrome.runtime.sendMessage(JSON.stringify(message));
-
-window.onscroll = function(){
-    var t = document.documentElement.scrollTop || document.body.scrollTop;
-    var message = {
-        title: title,
-        link: url,
-        position: 0
-    }
-    chrome.runtime.sendMessage(JSON.stringify(message));
-}
